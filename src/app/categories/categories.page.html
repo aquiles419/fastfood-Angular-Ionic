@@ -18,17 +18,9 @@
 </ion-header>
 
 <ion-content>
-    <ion-card class="card" style="width: 30%">
-      <ion-img class="img-login center" src="../assets/3f1cf0e2c1db8beaca0cffd41c24a826.png"></ion-img>
+    <ion-card *ngFor="let categories of categories" class="card">
       <ion-card-content>
-        <ion-button expand="block" color="success" ><ion-icon name="fast-food"></ion-icon> Hamburguer</ion-button>
-      </ion-card-content>
-    </ion-card>
-    
-    <ion-card class="card" style="width: 30%">
-      <ion-img class="img-login center" src="../assets/3f1cf0e2c1db8beaca0cffd41c24a826.png"></ion-img>
-      <ion-card-content>
-        <ion-button expand="block" color="success" ><ion-icon name="fast-food"></ion-icon> Hamburguer</ion-button>
+        <ion-button expand="block" color="success" ><ion-icon name="list"></ion-icon> {{categories.name}}</ion-button>
       </ion-card-content>
     </ion-card>
 </ion-content>

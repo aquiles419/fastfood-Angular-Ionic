@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriesCrudService } from '../services/categories-crud.service';
+import { Categories } from './Icategories';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesPage implements OnInit {
 
-  constructor() { }
+    categories: Categories[];
+
+  constructor(private service: CategoriesCrudService) { }
 
   ngOnInit() {
+    this.service.list().subscribe(data => this.categories = data);
   }
 
-}
+} 
