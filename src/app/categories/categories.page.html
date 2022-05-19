@@ -18,7 +18,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let categories of categories" class="card">
+    <ion-card *ngFor="let categories of categories$ | async" class="card">
       <ion-card-content>
         <ion-button expand="block" color="success" ><ion-icon name="list"></ion-icon> {{categories.name}}</ion-button>
       </ion-card-content>

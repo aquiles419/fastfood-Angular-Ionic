@@ -18,7 +18,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let products of products" class="card" style="width: 30%">
+    <ion-card *ngFor="let products of products$ | async" class="card" style="width: 30%">
       <ion-img class="img-login center" src="../assets/3f1cf0e2c1db8beaca0cffd41c24a826.png"></ion-img>
       <ion-card-header>
         <ion-card-title class="titulo-produto">{{products.name}}</ion-card-title>

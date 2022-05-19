@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CategoriesCrudService } from '../services/categories-crud.service';
 import { Categories } from './Icategories';
 
@@ -9,12 +10,13 @@ import { Categories } from './Icategories';
 })
 export class CategoriesPage implements OnInit {
 
-    categories: Categories[];
+    categories$: Observable<Categories[]>;
 
   constructor(private service: CategoriesCrudService) { }
 
   ngOnInit() {
-    this.service.list().subscribe(data => this.categories = data);
+   // this.service.list().subscribe(data => this.categories = data);
+   this.categories$ = this.service.list();
   }
 
 } 
