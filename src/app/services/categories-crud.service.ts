@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { Categories } from '../categories/Icategories';
-import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,9 +13,6 @@ export class CategoriesCrudService {
   constructor(private http: HttpClient) { }
 
   list(){
-    return this.http.get<Categories[]>(this.API)
-    .pipe(
-      tap(console.log)
-    );
+    return this.http.get<Categories[]>(this.API);
   }
 }
